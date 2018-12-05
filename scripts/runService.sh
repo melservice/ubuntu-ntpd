@@ -4,8 +4,20 @@
 
 pidfile="/run/ntpd.pid";
 
+# ----------------------------------------------------------------------------------------------
+
+function stopService {
+	if [ -f "$pidfile" ]; then
+		kill -15 $(cat "$pidfile");
+	fi;
+	
+	return 0;
+}
+
+# ----------------------------------------------------------------------------------------------
+
 # per Trap wird der Dienst wieder heruntergefahren
-trap 'if [ -f "$pidfile" ]; then kill -15 $(cat "$pidfile"); fi; exit 0' EXIT SIGINT SIGKILL SIGTERM
+trap 'stopService; exit $?' EXIT SIGINT SIGKILL SIGTERM
 
 # Der NTP-Daemon wird gestartet
 ntpd -p $pidfile 2>&1

@@ -2,4 +2,4 @@
 #
 # Initialisierung des Service beim Erstellen des Images
 
-apt-get install -y --no-install-recommends apt-utils ntp
+/docker/init/aptInstall.sh ntp

@@ -28,8 +28,7 @@ sleep 10;
 if [ -f "$pidfile" ]; then
 	waitPID=$(cat "$pidfile");
 	while ps aux | grep "$pidfile" 2>/dev/null >/dev/null; do
-		echo sleep 1;
-		sleep 1;
+		sleep 10;
 	done;
 else
 	echo "PID-File '$pidfile' ist nicht vorhanden";

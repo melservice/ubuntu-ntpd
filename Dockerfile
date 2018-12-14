@@ -1,7 +1,7 @@
 FROM melservice/ubuntu-server:latest
 
 LABEL version="1.0"
-LABEL description="NTP-Server als Service auf Ubuntu-Basis"
+LABEL description="NTP-Server-Dienst als Docker-Service auf Ubuntu-Basis"
 LABEL maintainer="develop@melsaesser.de"
 
 # Die bereitgestellten Skripte und Einstellungen kopieren

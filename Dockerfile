@@ -5,7 +5,7 @@ LABEL description="NTP-Server-Dienst als Docker-Service auf Ubuntu-Basis"
 LABEL maintainer="develop@melsaesser.de"
 
 # Die bereitgestellten Skripte und Einstellungen kopieren
-ADD scripts/ /docker/init/
+COPY rootfs /
 
 # Die aktuellen Paketlisten laden, Updates holen und Initialisierung laufen lassen,
 # danach wird wieder aufgeräumt

@@ -9,7 +9,7 @@ COPY rootfs /
 
 # Die aktuellen Paketlisten laden, Updates holen und Initialisierung laufen lassen,
 # danach wird wieder aufgeräumt
-RUN /docker/init/initService.sh
+RUN /docker/init/create-ubuntu-ntpd.sh
 
 # Volumes, die nach außen gereicht werden sollen
 VOLUME ["/docker/input", "/docker/output"]
@@ -18,4 +18,4 @@ VOLUME ["/docker/input", "/docker/output"]
 EXPOSE 123/udp
 
 # Dies ist das Start-Kommando
-CMD ["/docker/init/runService.sh"]
+CMD ["bash", "/docker/init/runService.sh"]

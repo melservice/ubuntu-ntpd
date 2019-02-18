@@ -11,9 +11,6 @@ COPY rootfs /
 # danach wird wieder aufgeräumt
 RUN /docker/init/create-ubuntu-ntpd.sh
 
-# Volumes, die nach außen gereicht werden sollen
-VOLUME ["/docker/input", "/docker/output"]
-
 # Port wird von außen zugänglich gemacht
 EXPOSE 123/udp
 
